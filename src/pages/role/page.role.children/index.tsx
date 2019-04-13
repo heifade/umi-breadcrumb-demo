@@ -22,7 +22,7 @@ export default function(props) {
 
   return (
     <div>
-      <div className={styles.title}>子用户列表</div>
+      <div className={styles.title}>{match.params.name}子角色列表</div>
       <table>
         <thead>
           <tr>
@@ -37,7 +37,7 @@ export default function(props) {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`/user/children/${match.params.id}/detail/${h.id}`}>编辑</Link>
+                <Link to={`/role/children/${match.params.id}/detail/${h.id}/${h.name}`}>编辑</Link>
               </td>
             </tr>
           ))}

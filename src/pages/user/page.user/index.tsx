@@ -35,7 +35,7 @@ export default function() {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`/user/children/${h.id}`}>编辑</Link>
+                <Link to={`/user/children/${h.id}/${h.name}`}>编辑</Link>
               </td>
             </tr>
           ))}

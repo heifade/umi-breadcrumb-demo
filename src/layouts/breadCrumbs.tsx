@@ -1,20 +1,20 @@
 import React from 'react';
 import withBreadcrumbs from 'react-router-breadcrumbs-hoc';
-import { NavLink } from 'umi';
+import { Breadcrumb } from 'antd';
 import { pageRoutes } from '../../config/router';
+import { Link } from 'umi';
 
 export const Breadcrumbs = withBreadcrumbs(pageRoutes)(({ breadcrumbs }) => {
   const list = breadcrumbs.filter(breadcrumb => breadcrumb.name);
   return (
-    <div>
+    <Breadcrumb>
       {list.map((breadcrumb, index) => {
         return (
-          <span key={breadcrumb.key}>
-            <NavLink to={breadcrumb.match.url}>{breadcrumb.name}</NavLink>
-            {index < list.length - 1 && <i> / </i>}
-          </span>
+          <Breadcrumb.Item key={breadcrumb.key}>
+            <Link to={breadcrumb.match.url}>{breadcrumb.name}</Link>
+          </Breadcrumb.Item>
         );
       })}
-    </div>
+    </Breadcrumb>
   );
 });
