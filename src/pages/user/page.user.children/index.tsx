@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'umi';
 import styles from '../styles.less';
 
-export default function(props) {
+export default function(props: any) {
   const { match } = props;
+  const { id, name } = match.params;
 
   const list = [
     {
@@ -22,7 +23,7 @@ export default function(props) {
 
   return (
     <div>
-      <div className={styles.title}>{match.params.name}子用户列表</div>
+      <div className={styles.title}>{name}子用户列表</div>
       <table>
         <thead>
           <tr>
@@ -37,7 +38,7 @@ export default function(props) {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`/user/children/${match.params.id}/${match.params.name}/detail/${h.id}/${h.name}`}>编辑</Link>
+                <Link to={`/user/children/${id}/${name}/detail/${h.id}/${h.name}`}>编辑</Link>
               </td>
             </tr>
           ))}
