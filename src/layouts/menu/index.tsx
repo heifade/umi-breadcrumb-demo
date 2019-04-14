@@ -5,30 +5,57 @@ import { ClickParam } from 'antd/lib/menu';
 const { SubMenu, ItemGroup } = Menu;
 
 interface IProps {
+  match: {
+    params: {
+      menuId: string;
+    };
+  };
   onClick: (param: ClickParam) => void;
 }
 
 export function SideMenu(props: IProps) {
+  const {
+    params: { menuId },
+  } = props.match;
+
   return (
     <Menu
       onClick={props.onClick}
-      defaultSelectedKeys={['1']}
-      defaultOpenKeys={['sub1']}
+      defaultSelectedKeys={[menuId]}
+      defaultOpenKeys={[menuId.substr(0, 2)]}
       mode="inline"
     >
       <SubMenu
-        key="sub1"
+        key="01"
         title={
           <span>
-            <Icon type="mail" />
-            <span>路由/面包屑</span>
+            <Icon type="setting" />
+            <span>系统管理</span>
           </span>
         }
       >
-        <ItemGroup key="g1" title="系统管理">
-          <Menu.Item key="/department">部门管理</Menu.Item>
-          <Menu.Item key="/user">用户管理</Menu.Item>
-        </ItemGroup>
+        <Menu.Item key="011" data-url="/011/department">
+          部门管理
+        </Menu.Item>
+        <Menu.Item key="012" data-url="/012/user">
+          用户管理
+        </Menu.Item>
+      </SubMenu>
+      <SubMenu
+        key="02"
+        title={
+          <span>
+            <Icon type="file-word" />
+            <span>文章</span>
+          </span>
+        }
+      >
+        <Menu.Item key="021" data-url="/021/article/001">
+          文章1
+        </Menu.Item>
+        <Menu.Item key="022" data-url="/022/article/002">
+          文章2
+        </Menu.Item>
       </SubMenu>
     </Menu>
   );

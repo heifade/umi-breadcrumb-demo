@@ -7,7 +7,8 @@ import { ClickParam } from 'antd/lib/menu';
 import { router } from 'umi';
 
 function onMenuClick(param: ClickParam) {
-  router.push(param.key);
+  const url = param.item.props['data-url'];
+  router.push(url);
 }
 
 const BasicLayout: React.FC = props => {
@@ -18,7 +19,7 @@ const BasicLayout: React.FC = props => {
       </Layout.Header>
       <Layout>
         <Layout.Sider>
-          <SideMenu onClick={onMenuClick} />
+          <SideMenu onClick={onMenuClick} {...props} />
         </Layout.Sider>
         <Layout.Content>
           <Breadcrumbs />

@@ -6,7 +6,7 @@ export default function(props: any) {
 
   return (
     <div>
-      <div className={styles.title}>{match.params.name}用户信息编辑</div>
+      <div className={styles.title}>{match.params.id}文章内容</div>
     </div>
   );
 }

@@ -1,46 +1,63 @@
 export const pageRoutes = [
   {
-    path: '/',
+    path: '/:menuId',
     breadcrumb: null,
     component: '../layouts/index',
     routes: [
       {
-        path: '/department',
+        path: '/:menuId/department',
         component: './staff',
         name: '部门管理',
         routes: [
           {
-            path: '/department',
+            path: '/:menuId/department',
             component: './staff/page.department',
             name: '部门管理',
           },
           {
-            path: '/department/staff/:id/:name',
+            path: '/:menuId/department/staff/:id/:name',
             component: './staff/page.staff',
             name: '用户管理',
           },
           {
-            path: '/department/staff/:id/:name/detail/:id/:name',
+            path: '/:menuId/department/staff/:id/:name/detail/:id/:name',
             component: './page.userEdit',
             name: '用户编辑',
           },
         ],
       },
       {
-        path: '/user',
+        path: '/:menuId/user',
         component: './user',
         name: '用户管理',
         routes: [
           {
-            path: '/user',
+            path: '/:menuId/user',
             component: './user/page.user',
             name: '用户管理',
           },
           {
-            path: '/user/detail/:id/:name',
+            path: '/:menuId/user/detail/:id/:name',
             component: './page.userEdit',
             name: '用户编辑',
           },
+        ],
+      },
+      {
+        path: '/:menuId/article/:id',
+        component: './page.article',
+        name: '文章管理',
+        routes: [
+          {
+            path: '/:menuId/article/:id',
+            component: './page.article',
+            name: '文章管理',
+          },
+          // {
+          //   path: '/:menuId/user/detail/:id/:name',
+          //   component: './page.userEdit',
+          //   name: '用户编辑',
+          // },
         ],
       },
     ],
