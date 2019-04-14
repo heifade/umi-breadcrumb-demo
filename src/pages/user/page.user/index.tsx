@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'umi';
 import styles from '../styles.less';
 
-export default function() {
+export default function(props: any) {
   const list = [
     {
       name: 'a1',
@@ -17,6 +17,10 @@ export default function() {
       id: 'a3',
     },
   ];
+
+  const {
+    location: { pathname },
+  } = props;
 
   return (
     <div>
@@ -35,7 +39,7 @@ export default function() {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`/user/children/${h.id}/${h.name}`}>编辑</Link>
+                <Link to={`${pathname}/children/${h.id}/${h.name}`}>编辑</Link>
               </td>
             </tr>
           ))}

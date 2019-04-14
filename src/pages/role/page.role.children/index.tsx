@@ -21,6 +21,10 @@ export default function(props: any) {
     },
   ];
 
+  const {
+    location: { pathname },
+  } = props;
+
   return (
     <div>
       <div className={styles.title}>{name}子角色列表</div>
@@ -38,7 +42,7 @@ export default function(props: any) {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`/role/children/${id}/${name}/detail/${h.id}/${h.name}`}>编辑</Link>
+                <Link to={`${pathname}/detail/${h.id}/${h.name}`}>编辑</Link>
               </td>
             </tr>
           ))}
