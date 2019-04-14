@@ -50,10 +50,13 @@ export function SideMenu(props: IProps) {
           </span>
         }
       >
-        <Menu.Item key="021" data-url="/021/article/001">
+        <Menu.Item key="021" data-url="/021/article">
+          文章管理
+        </Menu.Item>
+        <Menu.Item key="022" data-url="/022/articleDetail/001">
           文章1
         </Menu.Item>
-        <Menu.Item key="022" data-url="/022/article/002">
+        <Menu.Item key="023" data-url="/023/articleDetail/002">
           文章2
         </Menu.Item>
       </SubMenu>

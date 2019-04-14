@@ -43,21 +43,27 @@ export const pageRoutes = [
           },
         ],
       },
+
       {
-        path: '/:menuId/article/:id',
-        component: './page.article',
+        path: '/:menuId/articleDetail/:id',
+        component: './article/page.edit',
+        name: '文章内容',
+      },
+      {
+        path: '/:menuId/article',
+        component: './article',
         name: '文章管理',
         routes: [
           {
-            path: '/:menuId/article/:id',
-            component: './page.article',
+            path: '/:menuId/article',
+            component: './article/page.article',
             name: '文章管理',
           },
-          // {
-          //   path: '/:menuId/user/detail/:id/:name',
-          //   component: './page.userEdit',
-          //   name: '用户编辑',
-          // },
+          {
+            path: '/:menuId/article/edit/:id',
+            component: './article/page.edit',
+            name: '文章内容',
+          },
         ],
       },
     ],
