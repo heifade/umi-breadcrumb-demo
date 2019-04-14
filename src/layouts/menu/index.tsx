@@ -26,7 +26,7 @@ export function SideMenu(props: IProps) {
         }
       >
         <ItemGroup key="g1" title="系统管理">
-          <Menu.Item key="/department">部门/员工管理</Menu.Item>
+          <Menu.Item key="/department">部门管理</Menu.Item>
           <Menu.Item key="/user">用户管理</Menu.Item>
         </ItemGroup>
       </SubMenu>
