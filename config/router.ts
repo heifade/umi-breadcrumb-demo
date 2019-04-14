@@ -5,6 +5,28 @@ export const pageRoutes = [
     component: '../layouts/index',
     routes: [
       {
+        path: '/department',
+        component: './staff',
+        name: '部门管理',
+        routes: [
+          {
+            path: '/department',
+            component: './staff/page.department',
+            name: '部门管理',
+          },
+          {
+            path: '/department/staff/:id/:name',
+            component: './staff/page.staff',
+            name: '用户管理',
+          },
+          {
+            path: '/department/staff/:id/:name/detail/:id/:name',
+            component: './page.userEdit',
+            name: '用户编辑',
+          },
+        ],
+      },
+      {
         path: '/user',
         component: './user',
         name: '用户管理',
@@ -15,36 +37,9 @@ export const pageRoutes = [
             name: '用户管理',
           },
           {
-            path: '/user/children/:id/:name',
-            component: './user/page.user.children',
-            name: '子用户管理',
-          },
-          {
-            path: '/user/children/:id/:name/detail/:id/:name',
-            component: './page.detail',
-            name: '子用户编辑',
-          },
-        ],
-      },
-      {
-        path: '/role',
-        component: './role',
-        name: '角色管理',
-        routes: [
-          {
-            path: '/role',
-            component: './role/page.role',
-            name: '角色管理',
-          },
-          {
-            path: '/role/children/:id/:name',
-            component: './role/page.role.children',
-            name: '子角色管理',
-          },
-          {
-            path: '/role/children/:id/:name/detail/:id/:name',
-            component: './page.detail',
-            name: '子角色编辑',
+            path: '/user/detail/:id/:name',
+            component: './page.userEdit',
+            name: '用户编辑',
           },
         ],
       },

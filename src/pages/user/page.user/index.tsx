@@ -5,16 +5,16 @@ import styles from '../styles.less';
 export default function(props: any) {
   const list = [
     {
-      name: 'a1',
-      id: 'a1',
+      name: '张三',
+      id: 'a001',
     },
     {
-      name: 'a2',
-      id: 'a2',
+      name: '李四',
+      id: 'a002',
     },
     {
-      name: 'a3',
-      id: 'a3',
+      name: '王五',
+      id: 'a003',
     },
   ];
 
@@ -24,7 +24,7 @@ export default function(props: any) {
 
   return (
     <div>
-      <div className={styles.title}>用户列表</div>
+      <div className={styles.title}>角色列表</div>
       <table>
         <thead>
           <tr>
@@ -39,7 +39,7 @@ export default function(props: any) {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`${pathname}/children/${h.id}/${h.name}`}>编辑</Link>
+                <Link to={`${pathname}/detail/${h.id}/${h.name}`}>编辑</Link>
               </td>
             </tr>
           ))}

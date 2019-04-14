@@ -8,16 +8,16 @@ export default function(props: any) {
 
   const list = [
     {
-      name: 'b1',
-      id: 'b1',
+      name: '张三',
+      id: 'a001',
     },
     {
-      name: 'b2',
-      id: 'b2',
+      name: '李四',
+      id: 'a002',
     },
     {
-      name: 'b3',
-      id: 'b3',
+      name: '王五',
+      id: 'a003',
     },
   ];
 
@@ -27,7 +27,7 @@ export default function(props: any) {
 
   return (
     <div>
-      <div className={styles.title}>{name}子角色列表</div>
+      <div className={styles.title}>{name}/用户列表</div>
       <table>
         <thead>
           <tr>

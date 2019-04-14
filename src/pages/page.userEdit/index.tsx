@@ -6,7 +6,7 @@ export default function(props) {
 
   return (
     <div>
-      <div className={styles.title}>{match.params.name}公用详情页面</div>
+      <div className={styles.title}>{match.params.name}用户信息编辑</div>
     </div>
   );
 }
