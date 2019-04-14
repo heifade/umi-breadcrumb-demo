@@ -39,7 +39,7 @@ export default function(props: any) {
               <td>{h.id}</td>
               <td>{h.name}</td>
               <td>
-                <Link to={`${pathname}/edit/${h.id}`}>编辑</Link>
+                <Link to={`${pathname}/detail/${h.id}`}>查看</Link>
               </td>
             </tr>
           ))}

@@ -46,7 +46,7 @@ export const pageRoutes = [
 
       {
         path: '/:menuId/articleDetail/:id',
-        component: './article/page.edit',
+        component: './article/page.detail',
         name: '文章内容',
       },
       {
@@ -60,8 +60,8 @@ export const pageRoutes = [
             name: '文章管理',
           },
           {
-            path: '/:menuId/article/edit/:id',
-            component: './article/page.edit',
+            path: '/:menuId/article/detail/:id',
+            component: './article/page.detail',
             name: '文章内容',
           },
         ],
