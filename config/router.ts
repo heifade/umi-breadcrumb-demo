@@ -1,7 +1,6 @@
 export const pageRoutes = [
   {
     path: '/:menuId',
-    breadcrumb: null,
     component: '../layouts/index',
     routes: [
       {
